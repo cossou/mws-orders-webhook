@@ -1,0 +1,24 @@
+service: mws-webhook
+
+provider:
+  name: aws
+  description: Fires a webhook
+  environment:
+    DB_HOST: your_database.host.rds.amazonaws.com
+    DB_USER: TestUser123
+    DB_PASS: TestPass123
+    DB_PORT: 3306
+    DB_DATABASE: mws-webhooks
+  runtime: python2.7
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "rds:*"
+      Resource: "*"
+
+functions:
+  webhook:
+    handler: handler.main
+
+plugins:
+  - serverless-python-requirements

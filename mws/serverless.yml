@@ -1,0 +1,41 @@
+service: mws-orders
+
+provider:
+  name: aws
+  description: Collects MWS Orders to DB
+  environment:
+    DB_HOST: your_database.host.rds.amazonaws.com
+    DB_USER: TestUser123
+    DB_PASS: TestPass123
+    DB_PORT: 3306
+    DB_DATABASE: mws-webhooks
+    MWS_ACCESS_KEY: YOURMWSACCESSKEY
+    MWS_SECRET_KEY: YOURMWSSECRET
+  runtime: python2.7
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "rds:*"
+      Resource: "*"
+
+functions:
+  mws:
+    handler: handler.main
+
+plugins:
+  - serverless-python-requirements
+
+resources:
+  Resources:
+    RDSDatabase:
+      Type: AWS::RDS::DBInstance
+      Properties:
+        Engine : mysql
+        EngineVersion: 5.7.21
+        DBInstanceIdentifier: TestMWS
+        MasterUsername: TestUser123
+        MasterUserPassword: TestPass123
+        DBInstanceClass : db.t2.micro
+        AllocatedStorage: '5'
+        PubliclyAccessible: true
+      DeletionPolicy: Snapshot
