@@ -5,7 +5,7 @@ botocore==1.10.32
 certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
-cryptography==2.3
+cryptography==3.2
 docutils==0.14
 enum34==1.1.6
 Fabric==1.14.0
