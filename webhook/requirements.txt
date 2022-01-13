@@ -10,7 +10,7 @@ idna==2.6
 ipaddress==1.0.22
 mws==0.8.3
 paramiko==2.4.2
-Pillow==5.1.0
+Pillow==9.0.0
 pyasn1==0.4.2
 pycparser==2.18
 pycrypto==2.6.1
