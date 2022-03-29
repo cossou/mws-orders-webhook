@@ -9,7 +9,7 @@ Fabric==1.14.0
 idna==2.6
 ipaddress==1.0.22
 mws==0.8.3
-paramiko==2.4.2
+paramiko==2.10.1
 Pillow==5.1.0
 pyasn1==0.4.2
 pycparser==2.18
