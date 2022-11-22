@@ -16,7 +16,7 @@ jmespath==0.9.3
 mws==0.8.3
 numpy==1.14.3
 paramiko==2.4.2
-Pillow==5.1.0
+Pillow==9.3.0
 pyasn1==0.4.2
 pycparser==2.18
 pycrypto==2.6.1
